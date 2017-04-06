@@ -1,0 +1,36 @@
+{
+  "name": "sw-loader",
+  "version": "0.1.0",
+  "description": "service worker loader for webpack",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf __out__",
+    "pretest": "npm run clean",
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idiotWu/sw-loader.git"
+  },
+  "keywords": [
+    "service-worker",
+    "loader",
+    "webpack"
+  ],
+  "author": "Dolphin Wood <dolphin.w.e@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/idiotWu/sw-loader/issues"
+  },
+  "homepage": "https://github.com/idiotWu/sw-loader#readme",
+  "devDependencies": {
+    "rimraf": "^2.6.1",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "loader-utils": "^1.0.3"
+  },
+  "peerDependencies": {
+    "webpack": ">=0.9 <2 || ^2.1.0-beta || ^2.2.0"
+  }
+}
