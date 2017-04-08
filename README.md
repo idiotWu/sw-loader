@@ -17,6 +17,8 @@ This loader emits a standalone service worker file and exports the entry point.
 ```js
 import scriptURL from 'sw-loader!./sw.js';
 // => '{output.publicPath}/sw.js'
+
+navigator.serviceWorker.register(scriptURL).then(...);
 ``` 
 
 ## Options
