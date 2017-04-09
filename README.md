@@ -4,6 +4,8 @@
 [![Travis](https://img.shields.io/travis/idiotWu/sw-loader.svg)](https://travis-ci.org/idiotWu/sw-loader)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 
+Yet another Service Workers loader for webpack.
+
 ## Install
 
 ```bash
@@ -32,7 +34,7 @@ import scriptURL from 'sw-loader?name=my-worker.js!./sw.js';
 // => '{output.publicPath}/my-worker.js'
 ```
 
-Notice: this loader **DO NOT** support filename interpolation, for the reason that a service worker is considered as a persistent resource.
+Notice: this loader **DOES NOT** support filename interpolation, for the reason that a service worker is considered as a persistent resource.
 
 ### `outputPath`
 
