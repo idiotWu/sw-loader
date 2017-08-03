@@ -11,6 +11,8 @@ module.exports.pitch = function pitch(request) {
     throw new Error('Only usable with webpack.');
   }
 
+  this.cacheable(false);
+
   const callback = this.async();
   const query = loaderUtils.getOptions(this) || {};
   const filename = query.name || 'sw.js';
