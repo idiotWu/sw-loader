@@ -18,7 +18,8 @@ This loader emits a standalone service worker file and exports the entry point.
 
 ```js
 import scriptURL from 'sw-loader!./sw.js';
-// => '{output.publicPath}/sw.js'
+// => 'scriptURL = {output.publicPath}/sw.js'
+// => file location: {output.path}/sw.js
 
 navigator.serviceWorker.register(scriptURL).then(...);
 ``` 
@@ -31,7 +32,8 @@ Specify the name of output file:
 
 ```js
 import scriptURL from 'sw-loader?name=my-worker.js!./sw.js';
-// => '{output.publicPath}/my-worker.js'
+// => 'scriptURL = {output.publicPath}/my-worker.js'
+// => file location: {output.path}/my-worker.js
 ```
 
 Notice: this loader **DOES NOT** support filename interpolation, for the reason that a service worker is considered as a persistent resource.
@@ -44,7 +46,8 @@ By default the output path follows `output.path` option in webpack configuration
 
 ```js
 import scriptURL from 'sw-loader?outputPath=build/workers/!./sw.js';
-// => '{output.publicPath}/sw.js'
+// => 'scriptURL = {output.publicPath}/sw.js'
+// => file location: build/workers/sw.js
 ```
 
 The `outputPath` modifies **only the output destination**, if you want to change the access URL address of service worker script, use the `publicPath` option below.
@@ -54,9 +57,9 @@ The `outputPath` modifies **only the output destination**, if you want to change
 By default this loader uses `output.publicPath` to concatenate the public URL address of service worker script, you can modify it by:
 
 ```js
-// assuming `output.publicPath = 'assets/'`
-import scriptURL from 'sw-loader?outputPath=build/&publicPath=/!./sw.js';
-// => '/sw.js'
+import scriptURL from 'sw-loader?publicPath=/!./sw.js';
+// => 'scriptURL = /sw.js'
+// => file location: {output.path}/sw.js
 ```
 
 ## License
